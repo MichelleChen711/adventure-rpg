@@ -11,6 +11,6 @@ public class ProjectileCollider : MonoBehaviour {
 	}
 
 	void Update() {
-		Destroy(gameObject, 2);
+		Destroy(gameObject, 4);
 	}
 }

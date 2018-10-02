@@ -281,10 +281,11 @@ GameObject:
   - component: {fileID: 385177904}
   - component: {fileID: 385177903}
   - component: {fileID: 385177907}
-  - component: {fileID: 385177906}
   - component: {fileID: 385177908}
   - component: {fileID: 385177909}
   - component: {fileID: 385177902}
+  - component: {fileID: 385177906}
+  - component: {fileID: 385177910}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -303,8 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a04187404daa41a49fab3445684d19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1430904234884130, guid: bb3acf74bdd3445c6819dbb5eaed2073, type: 2}
-  projectileSpeed: 5
+  mage: {fileID: 385177906}
+  Fireball: {fileID: 1430904234884130, guid: bb3acf74bdd3445c6819dbb5eaed2073, type: 2}
+  fireballSpeed: 2
+  MagicBolt: {fileID: 1131703376101468, guid: 1b53003667db14a58b7f660eba07b11a, type: 2}
+  magicBoltSpeed: 2
 --- !u!23 &385177903
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -368,12 +372,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 385177901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f05dc3d545be4555b0692d55ee0e5fa, type: 3}
+  m_Script: {fileID: 11500000, guid: b2562cd45625646e2a1c90b548e4f933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 6
-  runDistance: 2
+  shouldSwitchState: 0
+  nav: {fileID: 0}
+  attackDistance: 15
+  runDistance: 5
   allEnemies: []
+  enemy: {fileID: 0}
 --- !u!54 &385177907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -423,6 +430,18 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &385177910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385177901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f05dc3d545be4555b0692d55ee0e5fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mage: {fileID: 385177906}
 --- !u!1 &501570454
 GameObject:
   m_ObjectHideFlags: 0
